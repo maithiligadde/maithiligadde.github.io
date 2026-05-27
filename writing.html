@@ -4,83 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maithili Gadde — Writing</title>
+<meta name="description" content="Notes on AI, engineering, career, and building in public — by Maithili Gadde.">
+<meta property="og:title" content="Maithili Gadde — Writing">
+<meta property="og:description" content="Notes on what I'm learning, building, and thinking about.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ── NYC icon sprite (reusable line drawings) ── -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <!-- bagel: a ring with a smaller hole, a few sesame dots -->
-    <symbol id="i-bagel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-      <circle cx="12" cy="12" r="8.5"/>
-      <circle cx="12" cy="12" r="3"/>
-      <circle cx="8" cy="7.5" r="0.4" fill="currentColor"/>
-      <circle cx="15.5" cy="8" r="0.4" fill="currentColor"/>
-      <circle cx="16.5" cy="15" r="0.4" fill="currentColor"/>
-      <circle cx="7.5" cy="15.5" r="0.4" fill="currentColor"/>
-    </symbol>
-    <!-- subway token: circle with NYC letterforms-style cross -->
-    <symbol id="i-token" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-      <circle cx="12" cy="12" r="9"/>
-      <path d="M8 8 L8 16 M8 8 L11 12 M11 12 L8 16 M13 8 L13 16 M13 8 L16 8 M13 12 L15.5 12 M13 16 L16 16"/>
-    </symbol>
-    <!-- yellow cab: simple side silhouette -->
-    <symbol id="i-cab" viewBox="0 0 28 18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M2 13 L2 10 L5 7 L9 5.5 L18 5.5 L22 7 L25 10 L26 13"/>
-      <line x1="2" y1="13" x2="26" y2="13"/>
-      <circle cx="7" cy="13.5" r="2"/>
-      <circle cx="21" cy="13.5" r="2"/>
-      <path d="M9 5.5 L10.5 8 L20 8 L18 5.5"/>
-      <rect x="11.5" y="3" width="5" height="2" rx="0.5"/>
-    </symbol>
-    <!-- coffee cup: paper cup with steam -->
-    <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6 9 L18 9 L17 21 L7 21 Z"/>
-      <line x1="6" y1="9" x2="18" y2="9"/>
-      <path d="M9 5 Q9 3, 10 3 Q10 5, 11 5 Q11 3, 12 3"/>
-      <path d="M13 5 Q13 3, 14 3 Q14 5, 15 5 Q15 3, 16 3"/>
-    </symbol>
-    <!-- fire escape: ladder rungs on a brownstone face -->
-    <symbol id="i-fire-escape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-      <line x1="9" y1="3" x2="9" y2="21"/>
-      <line x1="15" y1="3" x2="15" y2="21"/>
-      <line x1="9" y1="7" x2="15" y2="7"/>
-      <line x1="9" y1="11" x2="15" y2="11"/>
-      <line x1="9" y1="15" x2="15" y2="15"/>
-      <line x1="9" y1="19" x2="15" y2="19"/>
-    </symbol>
-    <!-- water tower: wooden tank on legs -->
-    <symbol id="i-water-tower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 6 L8 4 L16 4 L17 6 L17 13 L7 13 Z"/>
-      <line x1="9" y1="13" x2="8" y2="21"/>
-      <line x1="15" y1="13" x2="16" y2="21"/>
-      <line x1="7" y1="9" x2="17" y2="9"/>
-    </symbol>
-    <!-- pretzel: knot shape -->
-    <symbol id="i-pretzel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6 16 Q4 13, 7 10 Q10 7, 12 9 Q14 7, 17 10 Q20 13, 18 16 Q15 18, 13 15 Q12 13, 11 15 Q9 18, 6 16 Z"/>
-    </symbol>
-  </defs>
-</svg>
-
+<!-- icon sprite: NYC + Hyderabad + tech -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-chai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8 L8 20 L16 20 L17 8"/><line x1="6" y1="8" x2="18" y2="8"/><path d="M17 11 L20 11 L20 15 L17 15"/><path d="M10 5 Q10.5 3, 11.5 4"/><path d="M13 5 Q13.5 3, 14.5 4"/></symbol>
+  <symbol id="i-rick" viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14 L4 8 L8 4 L12 4 L12 8 L22 8 L24 14"/><line x1="4" y1="14" x2="24" y2="14"/><circle cx="8" cy="15" r="2"/><circle cx="21" cy="15" r="2"/><line x1="12" y1="4" x2="12" y2="14"/><path d="M14 8 L14 11 L19 11 L19 8"/></symbol>
+  <symbol id="i-metro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7 16 L7 8 L12 13 L17 8 L17 16"/></symbol>
+  <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9 L17 9 L16 21 L8 21 Z"/><line x1="6" y1="9" x2="18" y2="9"/><path d="M10 5 Q10 3, 11 3 Q11 5, 12 5 Q12 3, 13 3"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L13.5 9.5 L21 12 L13.5 14.5 L12 22 L10.5 14.5 L3 12 L10.5 9.5 Z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/><line x1="14" y1="4" x2="10" y2="20"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3 L21 7 L8 20 L3 21 L4 16 Z"/><line x1="14" y1="6" x2="18" y2="10"/></symbol>
+</defs></svg>
 
 <nav>
-  <a href="#" class="nav-logo">MAITHILI GADDE</a>
-  <ul class="nav-links">
+  <a href="index.html" class="nav-logo">MAITHILI GADDE</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
     <li><a href="work.html">Work</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="writing.html" class="active">Writing</a></li>
     <li><a href="now.html">Now</a></li>
     <li><a href="into.html">Into</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="marquee">
   <div class="marquee-track">
-    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-token"/></svg> shipping things independently <svg class="nyc-icon"><use href="#i-bagel"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-cab"/></svg></span>
-    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-token"/></svg> shipping things independently <svg class="nyc-icon"><use href="#i-bagel"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-cab"/></svg></span>
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-metro"/></svg> shipping things independently <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-metro"/></svg> shipping things independently <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
   </div>
 </div>
 
@@ -96,10 +59,10 @@
   <div class="post-list">
 
     <article class="post-card">
-      <div class="post-meta">May 2026 <svg class="inline-icon"><use href="#i-coffee"/></svg> Personal · Career</div>
-      <h2 class="post-title"><a href="https://maithiligadde.com/blog/getting-started.html">Why I'm Starting to Write</a></h2>
+      <div class="post-meta">May 2026 <svg class="inline-icon"><use href="#i-pen"/></svg> Personal &middot; Career</div>
+      <h2 class="post-title"><a href="blog/getting-started.html">Why I'm Starting to Write</a></h2>
       <p>After a decade of building things for other people, I'm finally building in public. Here's why writing is part of that — and what you can expect from this space.</p>
-      <a href="https://maithiligadde.com/blog/getting-started.html" class="post-link">Read post →</a>
+      <a href="blog/getting-started.html" class="post-link">Read post &rarr;</a>
     </article>
 
     <article class="post-card post-card-empty">
@@ -109,21 +72,22 @@
     </article>
 
   </div>
-
-  <div class="writing-footer">
-    <a href="https://maithiligadde.com/blog/index.html" class="btn"><svg class="nyc-icon-sm" style="color:white"><use href="#i-coffee"/></svg> View all posts <svg class="nyc-icon-sm" style="color:white"><use href="#i-coffee"/></svg></a>
-  </div>
 </section>
 
-
 <footer>
-  <div class="tag">Hyderabad · 2026 <svg class="nyc-icon-sm" style="color:var(--sage-deep);margin-left:0.5em"><use href="#i-coffee"/></svg> <svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-bagel"/></svg> <svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-cab"/></svg></div>
+  <div class="tag">Hyderabad &middot; 2026</div>
   <div class="links">
-    <a href="#">LinkedIn</a>
-    <a href="#">GitHub</a>
-    <a href="#">Email</a>
+    <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:maithili.gadde@gmail.com">Email</a>
   </div>
 </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
 
 </body>
 </html>
