@@ -1,1098 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maithili Gadde — Senior Software Engineer</title>
-    <meta name="description" content="Maithili Gadde is a senior software engineer with 10+ years of experience in data engineering, cloud infrastructure, and AI integration. Currently exploring agentic systems and building meaningful projects.">
-    <meta property="og:title" content="Maithili Gadde — Senior Software Engineer">
-    <meta property="og:description" content="10+ years building data platforms at scale. Currently exploring AI, agentic systems, and what's next.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="Website_pic.jpg">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Maithili Gadde — Senior Software Engineer">
-    <meta name="twitter:description" content="10+ years building data platforms at scale. Currently exploring AI, agentic systems, and what's next.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #FAFAF8;
-            --text: #1A1A18;
-            --text-muted: #6B6B65;
-            --accent: #C4A882;
-            --accent-dark: #A08660;
-            --border: #E8E6E1;
-            --card-bg: #FFFFFF;
-            --serif: 'Cormorant Garamond', Georgia, serif;
-            --sans: 'DM Sans', system-ui, sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--sans);
-            background: var(--bg);
-            color: var(--text);
-            font-weight: 300;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        ::selection {
-            background: var(--accent);
-            color: white;
-        }
-
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-
-        /* ── NAV ── */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 1.5rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(250, 250, 248, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.4s ease;
-        }
-
-        nav.scrolled {
-            border-bottom-color: var(--border);
-        }
-
-        .nav-logo {
-            font-family: var(--serif);
-            font-size: 1.4rem;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 400;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover { color: var(--text); }
-        .nav-links a:hover::after { width: 100%; }
-
-        /* ── HERO ── */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 3rem 4rem;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .hero-greeting {
-            font-family: var(--serif);
-            font-size: 1.1rem;
-            font-weight: 300;
-            font-style: italic;
-            color: var(--accent-dark);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 0.8s ease 0.2s forwards;
-        }
-
-        .hero-name {
-            font-family: var(--serif);
-            font-size: clamp(3rem, 8vw, 6.5rem);
-            font-weight: 300;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s ease 0.4s forwards;
-        }
-
-        .hero-line {
-            width: 60px;
-            height: 1px;
-            background: var(--accent);
-            margin: 0 auto 2rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease 0.6s forwards;
-        }
-
-        .hero-tagline {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto;
-            font-weight: 300;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 0.8s ease 0.8s forwards;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease 1.2s forwards;
-        }
-
-        .scroll-indicator span {
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--accent), transparent);
-            animation: scrollPulse 2s ease infinite;
-        }
-
-        /* ── SECTIONS ── */
-        section {
-            padding: 8rem 3rem;
-        }
-
-        .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent-dark);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .section-title {
-            font-family: var(--serif);
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 300;
-            margin-bottom: 3rem;
-            line-height: 1.2;
-        }
-
-        /* ── ABOUT ── */
-        .about {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .about-image-container {
-            position: relative;
-            aspect-ratio: 3/4;
-            overflow: hidden;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .about-details {
-            margin-top: 2.5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .detail-item {
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .detail-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--accent-dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .detail-value {
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-
-        /* ── JOURNEY TIMELINE ── */
-        .journey {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 5rem;
-            border: 1px solid var(--border);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 3rem;
-        }
-
-        .timeline-item:last-child { padding-bottom: 0; }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3rem;
-            top: 0.5rem;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent);
-            transform: translateX(-3px);
-        }
-
-        .timeline-year {
-            font-family: var(--serif);
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--accent-dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-role {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 0.2rem;
-        }
-
-        .timeline-company {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* ── PROJECTS ── */
-        .projects {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .project-card:hover::before { transform: scaleX(1); }
-        .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
-
-        .project-number {
-            font-family: var(--serif);
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--border);
-            margin-bottom: 1rem;
-            line-height: 1;
-        }
-
-        .project-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            font-size: 0.7rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.8rem;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            transition: all 0.3s;
-        }
-
-        .project-card:hover .tag {
-            border-color: var(--accent);
-            color: var(--accent-dark);
-        }
-
-        /* ── TECH STACK ── */
-        .stack {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1rem;
-        }
-
-        .stack-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 1.2rem 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stack-item:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-        }
-
-        .stack-item-name {
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 0.2rem;
-        }
-
-        .stack-item-cat {
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        /* ── RESUME BUTTON ── */
-        .resume-btn {
-            display: inline-block;
-            font-family: var(--sans);
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 0.7rem 1.8rem;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-
-        .resume-btn:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        /* ── LOOKING FOR ── */
-        .contact-looking {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .contact-looking strong {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        /* ── CONTACT ── */
-        .contact {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-text {
-            font-family: var(--serif);
-            font-size: clamp(1.4rem, 3vw, 2rem);
-            font-weight: 300;
-            line-height: 1.5;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-        }
-
-        .contact-email {
-            display: inline-block;
-            font-family: var(--serif);
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            color: var(--text);
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 4px;
-            transition: color 0.3s;
-        }
-
-        .contact-email::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--accent);
-        }
-
-        .contact-email:hover { color: var(--accent-dark); }
-
-        .social-links {
-            margin-top: 3rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .social-link {
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .social-link:hover { color: var(--text); }
-
-        .social-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .social-link:hover::after { width: 100%; }
-
-        /* ── FOOTER ── */
-        footer {
-            padding: 3rem;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        footer p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.08em;
-        }
-
-        /* ── WRITING / BLOG ── */
-        .writing {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .writing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .writing-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .writing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .writing-card:hover::before { transform: scaleX(1); }
-        .writing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
-
-        .writing-date {
-            font-family: var(--serif);
-            font-size: 0.85rem;
-            font-style: italic;
-            color: var(--accent-dark);
-            margin-bottom: 0.8rem;
-        }
-
-        .writing-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
-        .writing-excerpt {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .writing-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .writing-read-more {
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent-dark);
-            font-weight: 500;
-        }
-
-        .writing-card:hover .writing-read-more {
-            color: var(--text);
-        }
-
-        .writing-view-all {
-            display: inline-block;
-            font-family: var(--sans);
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 0.7rem 1.8rem;
-            transition: all 0.3s ease;
-            margin-top: 3rem;
-        }
-
-        .writing-view-all:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .writing-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ── ANIMATIONS ── */
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes scrollPulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── MOBILE NAV ── */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 22px;
-            height: 1px;
-            background: var(--text);
-            margin: 5px 0;
-            transition: all 0.3s;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
-            nav { padding: 1.2rem 1.5rem; }
-
-            .nav-toggle { display: block; }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background: var(--bg);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                transition: right 0.4s ease;
-                border-left: 1px solid var(--border);
-            }
-
-            .nav-links.open { right: 0; }
-
-            section { padding: 5rem 1.5rem; }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .about-image-container {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .projects-grid { grid-template-columns: 1fr; }
-
-            .stack-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
-
-            .journey { padding: 2.5rem 2rem; }
-
-            .hero { padding: 6rem 1.5rem 4rem; }
-
-            .social-links { gap: 1.5rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maithili Gadde — Text Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <a href="#about" class="skip-link" style="position:absolute;left:-9999px;top:0;padding:0.5rem 1rem;background:var(--accent);color:white;z-index:200;font-size:0.85rem;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to content</a>
+<!-- ── NYC icon sprite (reusable line drawings) ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- bagel: a ring with a smaller hole, a few sesame dots -->
+    <symbol id="i-bagel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="8.5"/>
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="8" cy="7.5" r="0.4" fill="currentColor"/>
+      <circle cx="15.5" cy="8" r="0.4" fill="currentColor"/>
+      <circle cx="16.5" cy="15" r="0.4" fill="currentColor"/>
+      <circle cx="7.5" cy="15.5" r="0.4" fill="currentColor"/>
+    </symbol>
+    <!-- subway token: circle with NYC letterforms-style cross -->
+    <symbol id="i-token" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M8 8 L8 16 M8 8 L11 12 M11 12 L8 16 M13 8 L13 16 M13 8 L16 8 M13 12 L15.5 12 M13 16 L16 16"/>
+    </symbol>
+    <!-- yellow cab: simple side silhouette -->
+    <symbol id="i-cab" viewBox="0 0 28 18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 13 L2 10 L5 7 L9 5.5 L18 5.5 L22 7 L25 10 L26 13"/>
+      <line x1="2" y1="13" x2="26" y2="13"/>
+      <circle cx="7" cy="13.5" r="2"/>
+      <circle cx="21" cy="13.5" r="2"/>
+      <path d="M9 5.5 L10.5 8 L20 8 L18 5.5"/>
+      <rect x="11.5" y="3" width="5" height="2" rx="0.5"/>
+    </symbol>
+    <!-- coffee cup: paper cup with steam -->
+    <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9 L18 9 L17 21 L7 21 Z"/>
+      <line x1="6" y1="9" x2="18" y2="9"/>
+      <path d="M9 5 Q9 3, 10 3 Q10 5, 11 5 Q11 3, 12 3"/>
+      <path d="M13 5 Q13 3, 14 3 Q14 5, 15 5 Q15 3, 16 3"/>
+    </symbol>
+    <!-- fire escape: ladder rungs on a brownstone face -->
+    <symbol id="i-fire-escape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <line x1="9" y1="3" x2="9" y2="21"/>
+      <line x1="15" y1="3" x2="15" y2="21"/>
+      <line x1="9" y1="7" x2="15" y2="7"/>
+      <line x1="9" y1="11" x2="15" y2="11"/>
+      <line x1="9" y1="15" x2="15" y2="15"/>
+      <line x1="9" y1="19" x2="15" y2="19"/>
+    </symbol>
+    <!-- water tower: wooden tank on legs -->
+    <symbol id="i-water-tower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 6 L8 4 L16 4 L17 6 L17 13 L7 13 Z"/>
+      <line x1="9" y1="13" x2="8" y2="21"/>
+      <line x1="15" y1="13" x2="16" y2="21"/>
+      <line x1="7" y1="9" x2="17" y2="9"/>
+    </symbol>
+    <!-- pretzel: knot shape -->
+    <symbol id="i-pretzel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 16 Q4 13, 7 10 Q10 7, 12 9 Q14 7, 17 10 Q20 13, 18 16 Q15 18, 13 15 Q12 13, 11 15 Q9 18, 6 16 Z"/>
+    </symbol>
+  </defs>
+</svg>
 
-    <!-- NAV -->
-    <nav id="navbar" aria-label="Main navigation">
-        <a href="#" class="nav-logo">Maithili Gadde</a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#about" onclick="closeNav()">About</a></li>
-            <li><a href="#journey" onclick="closeNav()">Journey</a></li>
-            <li><a href="#projects" onclick="closeNav()">Projects</a></li>
-            <li><a href="#stack" onclick="closeNav()">Skills</a></li>
-            <li><a href="#writing" onclick="closeNav()">Writing</a></li>
-            <li><a href="#contact" onclick="closeNav()">Contact</a></li>
-        </ul>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+<nav>
+  <a href="#" class="nav-logo">MAITHILI GADDE</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="now.html">Now</a></li>
+    <li><a href="into.html">Into</a></li>
+  </ul>
+</nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-greeting">Hello, I'm</p>
-            <h1 class="hero-name">Maithili Gadde</h1>
-            <div class="hero-line"></div>
-            <p class="hero-tagline">Senior engineer with a decade of building data platforms at scale — now exploring AI, agentic systems, and what's next while shipping real things along the way.</p>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+<div class="marquee">
+  <div class="marquee-track">
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-token"/></svg> currently between roles <svg class="nyc-icon"><use href="#i-bagel"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-cab"/></svg></span>
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-token"/></svg> currently between roles <svg class="nyc-icon"><use href="#i-bagel"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-cab"/></svg></span>
+  </div>
+</div>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="about reveal">
-            <div class="about-grid">
-                <div class="about-image-container">
-                    <img src="Website_pic.jpg" alt="Portrait of Maithili Gadde, senior software engineer" loading="lazy" style="width:100%; height:100%; object-fit:cover;" />
-                </div>
-                <div class="about-text">
-                    <span class="section-label">About</span>
-                    <h2 class="section-title">A bit about me</h2>
-                    <p>I'm a senior software engineer with over a decade of experience building data platforms that process billions of records. At Nielsen, I led an on-prem-to-AWS migration, cut pipeline runtimes by 93%, and saved nearly $900K a year. At Warner Music Group, I built the ETL systems behind royalty calculations for millions of daily music plays.</p>
-                    <p>Since January 2025, I've been in exploration mode — intentionally stepping outside the corporate track to go deeper into the things I'm most curious about: AI integration, agentic workflows, and building products end-to-end. I shipped a full-stack caregiver coordination app with Claude API integration, 128 tests, and CI pipelines. I'm not on a break — I'm building with more freedom than I've ever had.</p>
-                    <p>When I'm not coding, you'll find me exploring new places, diving into a good book, or experimenting with fashion. This site is a living document of where I've been, what I'm building, and where I'm headed.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <div class="detail-label">Location</div>
-                            <div class="detail-value">Hyderabad, IND</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Focus</div>
-                            <div class="detail-value">AI &amp; Data Systems</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Experience</div>
-                            <div class="detail-value">10 Years</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Education</div>
-                            <div class="detail-value">New York University</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-left">
+    <h1>I build data platforms<svg class="nyc-icon-sm star-after" style="margin-left:0.3em"><use href="#i-coffee"/></svg><br>and pay attention to <span class="rose-line">everything else</span>.</h1>
+    <p class="hero-sub">Senior engineer with a decade of building data platforms at scale — now exploring AI, agentic systems, and what's next while shipping real things along the way.</p>
+    <a href="#" class="btn"><svg class="nyc-icon-sm" style="color:white"><use href="#i-coffee"/></svg> See the work <svg class="nyc-icon-sm" style="color:white"><use href="#i-coffee"/></svg></a>
+  </div>
+  <div class="hero-right">
+    <div class="portrait-frame">
+      <svg class="corner-mark tl" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
+      <svg class="corner-mark tr" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
+      <svg class="corner-mark bl" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
+      <svg class="corner-mark br" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
+      <img src="hero-portrait.jpg" alt="Maithili Gadde">
+    </div>
+  </div>
+</section>
 
-    <!-- JOURNEY -->
-    <section id="journey">
-        <div class="journey reveal">
-            <span class="section-label">Experience</span>
-            <h2 class="section-title">My Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">Jan 2025 — Present</div>
-                    <div class="timeline-role">Independent Engineering Projects</div>
-                    <div class="timeline-company">Hyderabad, India</div>
-                    <div class="timeline-desc">Exploring AI integration, agentic workflows, and full-stack product development. Built MomPop Care — a caregiver coordination app with React Native, TypeScript, Claude API integration, 128 Jest tests, and GitHub Actions CI. Currently diving deeper into agentic systems and workflow automation.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2018 — 2025</div>
-                    <div class="timeline-role">Senior Software Engineer</div>
-                    <div class="timeline-company">Nielsen, New York, USA</div>
-                    <div class="timeline-desc">Led the on-prem-to-AWS cloud migration for a platform processing billions of audience measurement records. Optimized legacy pipelines to cut runtime by 93%, saving nearly $900K annually. Rebuilt and managed a team of 7 engineers during organizational restructuring while maintaining delivery timelines.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2016 — 2017</div>
-                    <div class="timeline-role">Big Data Engineer</div>
-                    <div class="timeline-company">Warner Music Group, New York, USA</div>
-                    <div class="timeline-desc">Built and maintained ETL pipelines processing millions of daily music-play records from platforms like Spotify and iTunes, powering royalty calculations and revenue analytics. Worked with Hadoop, Hive, and Spark at scale.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2015 — 2016</div>
-                    <div class="timeline-role">Master's in Computer Science</div>
-                    <div class="timeline-company">New York University</div>
-                    <div class="timeline-desc">Focused on big data systems and distributed computing. The academic foundation that shaped how I think about scalable architecture.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2012 — 2014</div>
-                    <div class="timeline-role">Systems Engineer</div>
-                    <div class="timeline-company">Infosys, Hyderabad, India</div>
-                    <div class="timeline-desc">Where it all started. Worked on enterprise systems and learned the fundamentals of software engineering at scale — writing clean code, collaborating across teams, and shipping under pressure.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="three-panels">
+  <div class="panel">
+    <h2 class="panel-title">Hi! Glad<br>you're here!</h2>
+    <p>I'm Maithili. A decade of building data platforms at scale, now exploring AI and agentic systems.</p>
+    <p>This is where the work, the writing, and the rest of it lives.</p>
+  </div>
+  <div class="panel">
+    <h2 class="panel-title">I'm a builder.</h2>
+    <p>Python, TypeScript, Spark, AWS. Twelve years moving data <svg class="panel-icon"><use href="#i-water-tower"/></svg> Nielsen, Warner Music, Infosys. NYU for the master's.</p>
+    <p>Currently independent, shipping real things.</p>
+    <div class="panel-photo">portrait two</div>
+  </div>
+  <div class="panel">
+    <h2 class="panel-title">Find what<br>I'm building</h2>
+    <p>MomPop Care for my family. Agentic workflow experiments. This site, hand-coded.</p>
+    <p>Stay a while <svg class="panel-icon"><use href="#i-fire-escape"/></svg> pick a room.</p>
+  </div>
+</section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="projects">
-            <div class="reveal">
-                <span class="section-label">What I'm Building</span>
-                <h2 class="section-title">Projects &amp; Explorations</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 3rem; max-width: 600px;">What I've been shipping since going independent — real products, real users, real learning. Each one taught me something I wouldn't have picked up inside a company.</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card reveal">
-                    <div class="project-number">01</div>
-                    <div class="project-title">MomPop Care</div>
-                    <div class="project-desc">A full-stack caregiver coordination app built for my family. Manages medications, appointments, and daily care tasks with AI-powered suggestions via the Claude API. 128 Jest tests, GitHub Actions CI, and a React Native frontend — production-grade, not a side project.</div>
-                    <div class="project-tags">
-                        <span class="tag">React Native</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Claude API</span>
-                        <span class="tag">Jest</span>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-number">02</div>
-                    <div class="project-title">maithiligadde.com</div>
-                    <div class="project-desc">This website — hand-coded from scratch. No templates, no frameworks. A single HTML file with custom CSS animations, responsive design, scroll-reveal effects, and SEO optimization. Built to prove you don't always need a build step.</div>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-number">03</div>
-                    <div class="project-title">Agentic Workflow Experiments</div>
-                    <div class="project-desc">Currently exploring how AI agents can automate real workflows — from data pipeline orchestration to personal productivity systems. Building with Claude, n8n, and custom toolchains to understand where agentic systems actually deliver value.</div>
-                    <div class="project-tags">
-                        <span class="tag">AI Agents</span>
-                        <span class="tag">n8n</span>
-                        <span class="tag">Automation</span>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-number">04</div>
-                    <div class="project-title">What's Next</div>
-                    <div class="project-desc">Looking for the right problem to throw myself at — something at the intersection of data and AI that genuinely matters. Open to building with a team, joining something early-stage, or starting from scratch.</div>
-                    <div class="project-tags">
-                        <span class="tag">Open to Opportunities</span>
-                        <span class="tag">AI + Data</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="rooms-section">
+  <div class="divider-row" style="padding-top:0;margin-top:-1rem;margin-bottom:2rem">
+    <span class="line"></span>
+    <svg><use href="#i-water-tower"/></svg>
+    <svg><use href="#i-coffee"/></svg>
+    <svg><use href="#i-bagel"/></svg>
+    <svg><use href="#i-token"/></svg>
+    <svg><use href="#i-cab"/></svg>
+    <span class="line"></span>
+  </div>
+  <div class="section-eyebrow">five rooms <svg class="nyc-icon-sm" style="color:var(--sage-deep);vertical-align:-0.15em"><use href="#i-bagel"/></svg> all yours to wander</div>
+  <h2 class="section-title">PICK A ROOM</h2>
+  <div class="rooms-grid">
+    <a href="work.html" class="room-card">
+      <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-water-tower"/></svg> Professional</div>
+      <h3>Work</h3>
+      <p>A decade across Nielsen, Warner Music, Infosys. The systems I've built and what they did.</p>
+    </a>
+    <a href="projects.html" class="room-card">
+      <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-bagel"/></svg> Made by me</div>
+      <h3>Projects</h3>
+      <p>What I've shipped since going independent. MomPop Care, agentic experiments, this site.</p>
+    </a>
+    <a href="writing.html" class="room-card">
+      <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-coffee"/></svg> Read me</div>
+      <h3>Writing</h3>
+      <p>Notes on what I'm learning, building, and thinking about.</p>
+    </a>
+    <a href="now.html" class="room-card">
+      <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-fire-escape"/></svg> This season</div>
+      <h3>Now</h3>
+      <p>What I'm focused on right now. Updated when life shifts.</p>
+    </a>
+    <a href="into.html" class="room-card" style="grid-column: 1 / -1;">
+      <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-cab"/></svg> The fun corner</div>
+      <h3>Into</h3>
+      <p>Fashion, design, and the things I notice. A corner for what isn't on the resume.</p>
+    </a>
+  </div>
+</section>
 
-    <!-- TECH STACK -->
-    <section id="stack">
-        <div class="stack reveal">
-            <span class="section-label">Tech Stack</span>
-            <h2 class="section-title">Tools I work with</h2>
-            <div class="stack-grid">
-                <div class="stack-item">
-                    <div class="stack-item-name">Python</div>
-                    <div class="stack-item-cat">Language</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">TypeScript</div>
-                    <div class="stack-item-cat">Language</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">SQL</div>
-                    <div class="stack-item-cat">Language</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">React Native</div>
-                    <div class="stack-item-cat">Frontend</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">AWS</div>
-                    <div class="stack-item-cat">Cloud</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Spark</div>
-                    <div class="stack-item-cat">Big Data</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Hadoop</div>
-                    <div class="stack-item-cat">Big Data</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Hive</div>
-                    <div class="stack-item-cat">Big Data</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Airflow</div>
-                    <div class="stack-item-cat">Orchestration</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Docker</div>
-                    <div class="stack-item-cat">DevOps</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">GitHub Actions</div>
-                    <div class="stack-item-cat">CI/CD</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Claude API</div>
-                    <div class="stack-item-cat">AI</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Jest</div>
-                    <div class="stack-item-cat">Testing</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-item-name">Terraform</div>
-                    <div class="stack-item-cat">IaC</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="now-section">
+  <div class="section-eyebrow">a peek <svg class="nyc-icon-sm" style="color:var(--rose-deep);vertical-align:-0.15em"><use href="#i-coffee"/></svg></div>
+  <h2 class="section-title">WHAT I'M DOING NOW</h2>
+  <div class="now-card">
+    <p>Looking for the right problem to throw myself at — something at the intersection of data and AI that genuinely matters. Open to building with a team, joining something early-stage, or starting from scratch.</p>
+    <p>Shipping things: MomPop Care for my family, agentic workflow experiments, this site.</p>
+    <p>Reading more, scrolling less. Trying to make rest a practice, not a guilty pause.</p>
+    <p>last updated may 2026</p>
+  </div>
+</section>
 
-    <!-- WRITING -->
-    <section id="writing">
-        <div class="writing">
-            <div class="reveal">
-                <span class="section-label">Writing</span>
-                <h2 class="section-title">Thoughts &amp; Explorations</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 3rem; max-width: 600px;">Notes on what I'm learning, building, and thinking about — from technical deep-dives to reflections on the journey.</p>
-            </div>
-            <div class="writing-grid">
-                <a href="blog/getting-started.html" class="writing-card reveal">
-                    <div class="writing-date">May 2026</div>
-                    <div class="writing-title">Why I'm Starting to Write</div>
-                    <div class="writing-excerpt">After a decade of building things for other people, I'm finally building in public. Here's why writing is part of that — and what you can expect from this space.</div>
-                    <div class="writing-tags">
-                        <span class="tag">Personal</span>
-                        <span class="tag">Career</span>
-                    </div>
-                </a>
-                <div class="writing-card reveal" style="border-style: dashed; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 250px; cursor: default;">
-                    <div class="writing-title" style="color: var(--text-muted); font-weight: 300;">More coming soon</div>
-                    <div class="writing-excerpt" style="margin-bottom: 0;">New posts on AI, engineering, and the things I'm figuring out along the way.</div>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                <a href="blog/index.html" class="writing-view-all">View All Posts</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="contact reveal">
-            <span class="section-label">Get in Touch</span>
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="contact-looking"><strong>What I'm looking for:</strong> The right problem, not just the right title. I want to build something that makes a real difference — whether that's at an early-stage company, an ambitious team, or something I start myself. If it sits at the intersection of data and AI and genuinely excites me, I'm in.</p>
-            <p class="contact-text">Have something interesting to discuss? My inbox is always open.</p>
-            <a href="mailto:maithili.gadde@gmail.com" class="contact-email">maithili.gadde@gmail.com</a>
-
-            <div class="social-links" role="list" aria-label="Social media links">
-                <a href="https://www.linkedin.com/in/maithiligadde/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/maithiligadde" class="social-link" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.instagram.com/maithu______/" class="social-link" target="_blank" rel="noopener">Instagram</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Maithili Gadde &mdash; Designed with intention</p>
-    </footer>
-
-    <script>
-        // Scroll reveal
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        reveals.forEach(el => observer.observe(el));
-
-        // Nav scroll effect
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Mobile nav
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-
-        function closeNav() {
-            navLinks.classList.remove('open');
-        }
-
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+<footer>
+  <div class="tag">Hyderabad · 2026 <svg class="nyc-icon-sm" style="color:var(--sage-deep);margin-left:0.5em"><use href="#i-coffee"/></svg> <svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-bagel"/></svg> <svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-cab"/></svg></div>
+  <div class="links">
+    <a href="#">LinkedIn</a>
+    <a href="#">GitHub</a>
+    <a href="#">Email</a>
+  </div>
+</footer>
 
 </body>
 </html>

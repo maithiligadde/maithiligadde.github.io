@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maithili Gadde — Writing</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ── NYC icon sprite (reusable line drawings) ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- bagel: a ring with a smaller hole, a few sesame dots -->
+    <symbol id="i-bagel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="8.5"/>
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="8" cy="7.5" r="0.4" fill="currentColor"/>
+      <circle cx="15.5" cy="8" r="0.4" fill="currentColor"/>
+      <circle cx="16.5" cy="15" r="0.4" fill="currentColor"/>
+      <circle cx="7.5" cy="15.5" r="0.4" fill="currentColor"/>
+    </symbol>
+    <!-- subway token: circle with NYC letterforms-style cross -->
+    <symbol id="i-token" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M8 8 L8 16 M8 8 L11 12 M11 12 L8 16 M13 8 L13 16 M13 8 L16 8 M13 12 L15.5 12 M13 16 L16 16"/>
+    </symbol>
+    <!-- yellow cab: simple side silhouette -->
+    <symbol id="i-cab" viewBox="0 0 28 18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 13 L2 10 L5 7 L9 5.5 L18 5.5 L22 7 L25 10 L26 13"/>
+      <line x1="2" y1="13" x2="26" y2="13"/>
+      <circle cx="7" cy="13.5" r="2"/>
+      <circle cx="21" cy="13.5" r="2"/>
+      <path d="M9 5.5 L10.5 8 L20 8 L18 5.5"/>
+      <rect x="11.5" y="3" width="5" height="2" rx="0.5"/>
+    </symbol>
+    <!-- coffee cup: paper cup with steam -->
+    <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9 L18 9 L17 21 L7 21 Z"/>
+      <line x1="6" y1="9" x2="18" y2="9"/>
+      <path d="M9 5 Q9 3, 10 3 Q10 5, 11 5 Q11 3, 12 3"/>
+      <path d="M13 5 Q13 3, 14 3 Q14 5, 15 5 Q15 3, 16 3"/>
+    </symbol>
+    <!-- fire escape: ladder rungs on a brownstone face -->
+    <symbol id="i-fire-escape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <line x1="9" y1="3" x2="9" y2="21"/>
+      <line x1="15" y1="3" x2="15" y2="21"/>
+      <line x1="9" y1="7" x2="15" y2="7"/>
+      <line x1="9" y1="11" x2="15" y2="11"/>
+      <line x1="9" y1="15" x2="15" y2="15"/>
+      <line x1="9" y1="19" x2="15" y2="19"/>
+    </symbol>
+    <!-- water tower: wooden tank on legs -->
+    <symbol id="i-water-tower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 6 L8 4 L16 4 L17 6 L17 13 L7 13 Z"/>
+      <line x1="9" y1="13" x2="8" y2="21"/>
+      <line x1="15" y1="13" x2="16" y2="21"/>
+      <line x1="7" y1="9" x2="17" y2="9"/>
+    </symbol>
+    <!-- pretzel: knot shape -->
+    <symbol id="i-pretzel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 16 Q4 13, 7 10 Q10 7, 12 9 Q14 7, 17 10 Q20 13, 18 16 Q15 18, 13 15 Q12 13, 11 15 Q9 18, 6 16 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<nav>
+  <a href="#" class="nav-logo">MAITHILI GADDE</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="writing.html" class="active">Writing</a></li>
+    <li><a href="now.html">Now</a></li>
+    <li><a href="into.html">Into</a></li>
+  </ul>
+</nav>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-token"/></svg> currently between roles <svg class="nyc-icon"><use href="#i-bagel"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-cab"/></svg></span>
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> twelve years building systems <svg class="nyc-icon"><use href="#i-token"/></svg> currently between roles <svg class="nyc-icon"><use href="#i-bagel"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-cab"/></svg></span>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">— read me</div>
+    <h1 class="page-title">WRITING</h1>
+    <p class="page-intro">Notes on what I'm learning, building, and thinking about — from technical deep-dives to reflections on the journey.</p>
+  </div>
+</section>
+
+<section class="writing-section">
+  <div class="post-list">
+
+    <article class="post-card">
+      <div class="post-meta">May 2026 <svg class="inline-icon"><use href="#i-coffee"/></svg> Personal · Career</div>
+      <h2 class="post-title"><a href="https://maithiligadde.com/blog/getting-started.html">Why I'm Starting to Write</a></h2>
+      <p>After a decade of building things for other people, I'm finally building in public. Here's why writing is part of that — and what you can expect from this space.</p>
+      <a href="https://maithiligadde.com/blog/getting-started.html" class="post-link">Read post →</a>
+    </article>
+
+    <article class="post-card post-card-empty">
+      <div class="post-meta">soon</div>
+      <h2 class="post-title">More coming soon</h2>
+      <p>New posts on AI, engineering, and the things I'm figuring out along the way.</p>
+    </article>
+
+  </div>
+
+  <div class="writing-footer">
+    <a href="https://maithiligadde.com/blog/index.html" class="btn"><svg class="nyc-icon-sm" style="color:white"><use href="#i-coffee"/></svg> View all posts <svg class="nyc-icon-sm" style="color:white"><use href="#i-coffee"/></svg></a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="tag">Hyderabad · 2026 <svg class="nyc-icon-sm" style="color:var(--sage-deep);margin-left:0.5em"><use href="#i-coffee"/></svg> <svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-bagel"/></svg> <svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-cab"/></svg></div>
+  <div class="links">
+    <a href="#">LinkedIn</a>
+    <a href="#">GitHub</a>
+    <a href="#">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
