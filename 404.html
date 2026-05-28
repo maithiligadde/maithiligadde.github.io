@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost — Maithili Gadde</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .lost-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+  .lost-cat {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+  }
+  @keyframes blink {
+    0%, 95%, 100% { transform: scaleY(1); }
+    97% { transform: scaleY(0.1); }
+  }
+  .cat-eyes {
+    animation: blink 4s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes tailWag {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+  }
+  .cat-tail {
+    transform-origin: 85% 75%;
+    animation: tailWag 1.5s ease-in-out infinite;
+  }
+  .lost-code {
+    font-family: var(--display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .lost-msg {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  .lost-sub {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    margin-bottom: 2.5rem;
+  }
+  .lost-home {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+  }
+  .lost-home:hover {
+    background: var(--ink);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">MAITHILI GADDE</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="now.html">Now</a></li>
+    <li><a href="into.html">Into</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="lost-page">
+
+  <svg class="lost-cat" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- tail -->
+    <g class="cat-tail">
+      <path d="M95 78 Q110 65, 105 50 Q102 42, 95 45" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- body -->
+    <ellipse cx="60" cy="85" rx="30" ry="20" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="2"/>
+    <!-- ears -->
+    <path d="M38 52 L30 25 L50 42 Z" fill="var(--rose-soft)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M82 52 L90 25 L70 42 Z" fill="var(--rose-soft)" stroke="var(--ink)" stroke-width="2"/>
+    <!-- inner ears -->
+    <path d="M39 50 L34 30 L48 43 Z" fill="var(--rose)" opacity="0.4"/>
+    <path d="M81 50 L86 30 L72 43 Z" fill="var(--rose)" opacity="0.4"/>
+    <!-- head -->
+    <ellipse cx="60" cy="58" rx="28" ry="24" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="2"/>
+    <!-- eyes -->
+    <g class="cat-eyes">
+      <ellipse cx="50" cy="55" rx="4" ry="4.5" fill="var(--ink)"/>
+      <ellipse cx="70" cy="55" rx="4" ry="4.5" fill="var(--ink)"/>
+      <circle cx="52" cy="53" r="1.5" fill="white"/>
+      <circle cx="72" cy="53" r="1.5" fill="white"/>
+    </g>
+    <!-- nose -->
+    <path d="M58 62 L60 65 L62 62 Z" fill="var(--rose-deep)"/>
+    <!-- mouth -->
+    <path d="M55 67 Q60 71, 65 67" stroke="var(--ink)" stroke-width="1.2" fill="none"/>
+    <!-- whiskers -->
+    <line x1="25" y1="58" x2="42" y2="57" stroke="var(--ink)" stroke-width="1" opacity="0.4"/>
+    <line x1="25" y1="64" x2="42" y2="62" stroke="var(--ink)" stroke-width="1" opacity="0.4"/>
+    <line x1="95" y1="58" x2="78" y2="57" stroke="var(--ink)" stroke-width="1" opacity="0.4"/>
+    <line x1="95" y1="64" x2="78" y2="62" stroke="var(--ink)" stroke-width="1" opacity="0.4"/>
+    <!-- front paws -->
+    <ellipse cx="45" cy="100" rx="8" ry="5" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="1.5"/>
+    <ellipse cx="75" cy="100" rx="8" ry="5" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="1.5"/>
+    <!-- toe beans -->
+    <circle cx="42" cy="99" r="1.5" fill="var(--rose-soft)"/>
+    <circle cx="45" cy="98" r="1.5" fill="var(--rose-soft)"/>
+    <circle cx="48" cy="99" r="1.5" fill="var(--rose-soft)"/>
+    <circle cx="72" cy="99" r="1.5" fill="var(--rose-soft)"/>
+    <circle cx="75" cy="98" r="1.5" fill="var(--rose-soft)"/>
+    <circle cx="78" cy="99" r="1.5" fill="var(--rose-soft)"/>
+  </svg>
+
+  <div class="lost-code">404</div>
+  <p class="lost-msg">This page wandered off somewhere.</p>
+  <p class="lost-sub">Even the cat can't find it.</p>
+  <a href="index.html" class="lost-home">Take me home</a>
+
+</div>
+
+<footer>
+  <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-lyric" id="footerLyric"></div>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:maithili.gadde@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const lyrics = [
+    'Is it still winter here?',
+    'I miss you.',
+    'How much longer do I have to wait?',
+    'Like a small piece, like the last of winter.',
+    'You know it all. You\'re my best friend.',
+    'Morning will come again.',
+    'Snowflakes are falling, getting farther away.',
+    'I wander around, looking for you.',
+    'Winter is cold because of you.'
+  ];
+  const el = document.getElementById('footerLyric');
+  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
+</script>
+
+</body>
+</html>
