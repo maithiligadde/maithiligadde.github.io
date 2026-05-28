@@ -147,7 +147,7 @@
   </button>
 </nav>
 
-<div class="article-header">
+<div class="article-header fade-up delay-1">
   <a href="../writing.html" class="article-back">&larr; All Posts</a>
   <div class="article-meta">
     <span class="article-date">May 27, 2026</span>
@@ -157,7 +157,7 @@
   <p class="article-subtitle">Nothing has caught my attention well enough to hold it. I can name the things I love. I just can't reach them right now.</p>
 </div>
 
-<div class="article-body">
+<div class="article-body fade-up delay-2">
 
   <p>Nothing has caught my attention well enough to hold it. I never get interested in anything. I want to, but I can't.</p>
 
@@ -202,6 +202,7 @@
 
 <footer>
   <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
@@ -213,6 +214,19 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const lyrics = [
+    'Is it still winter here?',
+    'I miss you.',
+    'How much longer do I have to wait?',
+    'Like a small piece, like the last of winter.',
+    'You know it all. You\'re my best friend.',
+    'Morning will come again.',
+    'Snowflakes are falling, getting farther away.',
+    'I wander around, looking for you.',
+    'Winter is cold because of you.'
+  ];
+  const el = document.getElementById('footerLyric');
+  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
 </script>
 
 </body>

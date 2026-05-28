@@ -11,6 +11,123 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* staggered card entrance */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .lately-card {
+    opacity: 0;
+    animation: fadeSlideUp 0.5s ease forwards;
+  }
+  .lately-card:nth-child(1) { animation-delay: 0.1s; }
+  .lately-card:nth-child(2) { animation-delay: 0.25s; }
+  .lately-card:nth-child(3) { animation-delay: 0.4s; }
+  .lately-card:nth-child(4) { animation-delay: 0.55s; }
+
+  /* music bars animation for listening cards */
+  .music-bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 14px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .music-bars span {
+    display: block;
+    width: 2.5px;
+    background: var(--rose-deep);
+    border-radius: 1px;
+    animation: barBounce 0.8s ease-in-out infinite alternate;
+  }
+  .music-bars span:nth-child(1) { height: 6px; animation-delay: 0s; }
+  .music-bars span:nth-child(2) { height: 10px; animation-delay: 0.15s; }
+  .music-bars span:nth-child(3) { height: 4px; animation-delay: 0.3s; }
+  .music-bars span:nth-child(4) { height: 8px; animation-delay: 0.45s; }
+  @keyframes barBounce {
+    from { transform: scaleY(0.4); }
+    to { transform: scaleY(1); }
+  }
+
+  /* peeking cat */
+  .peek-cat {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .peek-cat svg {
+    position: absolute;
+    bottom: -8px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    transform: translateY(28px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: auto;
+    cursor: default;
+  }
+  .peek-cat:hover svg,
+  .peek-cat.peeked svg {
+    transform: translateY(0);
+  }
+
+  /* cat blink */
+  @keyframes blink {
+    0%, 95%, 100% { transform: scaleY(1); }
+    97% { transform: scaleY(0.1); }
+  }
+  .cat-eyes {
+    animation: blink 4s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  /* sparkle on fashion card hover */
+  .sparkle-wrap { position: relative; overflow: visible; }
+  .sparkle-wrap .sparkle {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(0.5) rotate(0deg);
+  }
+  .sparkle-wrap:hover .sparkle {
+    opacity: 1;
+    transform: scale(1) rotate(20deg);
+  }
+
+  /* gentle tilt on card hover */
+  .lately-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+  }
+  .lately-card:hover {
+    transform: translate(-3px, -5px) rotate(-0.5deg);
+    box-shadow: 6px 8px 0 var(--ink);
+  }
+
+  /* floating heading dot */
+  .into-heading .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--rose-deep);
+    border-radius: 50%;
+    margin-left: 6px;
+    animation: floatDot 2s ease-in-out infinite;
+  }
+  @keyframes floatDot {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+</style>
 </head>
 <body>
 
@@ -55,22 +172,90 @@
   </div>
 </section>
 
+<!-- peeking cat between hero and content -->
+<div class="peek-cat" id="peekCat">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- ears -->
+    <path d="M16 28 L12 10 L24 22 Z" fill="var(--rose-soft)" stroke="var(--ink)" stroke-width="1.5"/>
+    <path d="M48 28 L52 10 L40 22 Z" fill="var(--rose-soft)" stroke="var(--ink)" stroke-width="1.5"/>
+    <!-- inner ears -->
+    <path d="M17 26 L15 14 L23 22 Z" fill="var(--rose)" opacity="0.4"/>
+    <path d="M47 26 L49 14 L41 22 Z" fill="var(--rose)" opacity="0.4"/>
+    <!-- head -->
+    <ellipse cx="32" cy="38" rx="22" ry="18" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="1.5"/>
+    <!-- eyes -->
+    <g class="cat-eyes">
+      <ellipse cx="24" cy="35" rx="3" ry="3.5" fill="var(--ink)"/>
+      <ellipse cx="40" cy="35" rx="3" ry="3.5" fill="var(--ink)"/>
+      <!-- eye shine -->
+      <circle cx="25.5" cy="33.5" r="1" fill="white"/>
+      <circle cx="41.5" cy="33.5" r="1" fill="white"/>
+    </g>
+    <!-- nose -->
+    <path d="M31 40 L32 42 L33 40 Z" fill="var(--rose-deep)"/>
+    <!-- mouth -->
+    <path d="M29 43 Q32 46, 35 43" stroke="var(--ink)" stroke-width="1" fill="none"/>
+    <!-- whiskers -->
+    <line x1="10" y1="38" x2="20" y2="37" stroke="var(--ink)" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="42" x2="20" y2="40" stroke="var(--ink)" stroke-width="0.8" opacity="0.4"/>
+    <line x1="54" y1="38" x2="44" y2="37" stroke="var(--ink)" stroke-width="0.8" opacity="0.4"/>
+    <line x1="54" y1="42" x2="44" y2="40" stroke="var(--ink)" stroke-width="0.8" opacity="0.4"/>
+    <!-- paws on edge -->
+    <ellipse cx="22" cy="54" rx="6" ry="4" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="1.2"/>
+    <ellipse cx="42" cy="54" rx="6" ry="4" fill="var(--cream-light)" stroke="var(--ink)" stroke-width="1.2"/>
+    <!-- toe beans -->
+    <circle cx="19" cy="53" r="1.2" fill="var(--rose-soft)"/>
+    <circle cx="22" cy="52" r="1.2" fill="var(--rose-soft)"/>
+    <circle cx="25" cy="53" r="1.2" fill="var(--rose-soft)"/>
+    <circle cx="39" cy="53" r="1.2" fill="var(--rose-soft)"/>
+    <circle cx="42" cy="52" r="1.2" fill="var(--rose-soft)"/>
+    <circle cx="45" cy="53" r="1.2" fill="var(--rose-soft)"/>
+  </svg>
+</div>
+
 <section class="into-section">
   <div class="into-content">
-    <p class="into-blurb">When I'm not coding, you'll find me exploring new places, diving into a good book, or experimenting with fashion. This space is for those things.</p>
-    <p class="into-blurb">More here soon. Outfits, places, references, the little catalog of what's holding my attention. For now, a placeholder.</p>
 
-    <div class="into-grid">
-      <div class="into-tile"><span>Outfits</span></div>
-      <div class="into-tile"><span>Places</span></div>
-      <div class="into-tile"><span>Reading</span></div>
-      <div class="into-tile"><span>Notes</span></div>
+    <h2 class="into-heading">Lately <span class="dot"></span></h2>
+
+    <div class="lately-grid">
+
+      <div class="lately-card">
+        <div class="lately-label">Listening <div class="music-bars"><span></span><span></span><span></span><span></span></div></div>
+        <div class="lately-item">River Flows in You</div>
+        <div class="lately-detail">Yiruma</div>
+        <div class="lately-note">All-time favorite. The kind of thing that makes everything else quiet.</div>
+      </div>
+
+      <div class="lately-card">
+        <div class="lately-label">Also on repeat <div class="music-bars"><span></span><span></span><span></span><span></span></div></div>
+        <div class="lately-item">First Love</div>
+        <div class="lately-detail">Hikaru Utada</div>
+      </div>
+
+      <div class="lately-card">
+        <div class="lately-label">Watching</div>
+        <div class="lately-item">Off Campus</div>
+        <div class="lately-note">Just started. Jury's still out.</div>
+      </div>
+
+      <div class="lately-card sparkle-wrap">
+        <svg class="sparkle" viewBox="0 0 24 24" fill="var(--rose-deep)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L13.5 9.5 L21 12 L13.5 14.5 L12 22 L10.5 14.5 L3 12 L10.5 9.5 Z"/></svg>
+        <div class="lately-label">Always into</div>
+        <div class="lately-item">Fashion</div>
+        <div class="lately-note">Keeping up with it, thinking about it, putting things together. Not working in it. Maybe someday.</div>
+      </div>
+
     </div>
+
+    <p class="lately-updated">last updated may 2026</p>
+
   </div>
 </section>
 
 <footer>
   <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
@@ -82,6 +267,25 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const lyrics = [
+    'Is it still winter here?',
+    'I miss you.',
+    'How much longer do I have to wait?',
+    'Like a small piece, like the last of winter.',
+    'You know it all. You\'re my best friend.',
+    'Morning will come again.',
+    'Snowflakes are falling, getting farther away.',
+    'I wander around, looking for you.',
+    'Winter is cold because of you.'
+  ];
+  const el = document.getElementById('footerLyric');
+  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
+
+  // cat peeks up after a moment
+  setTimeout(() => {
+    const cat = document.getElementById('peekCat');
+    if (cat) cat.classList.add('peeked');
+  }, 800);
 </script>
 
 </body>

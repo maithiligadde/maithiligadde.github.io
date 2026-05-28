@@ -57,14 +57,14 @@
 <section class="writing-section">
   <div class="post-list">
 
-    <article class="post-card">
+    <article class="post-card fade-up delay-1">
       <div class="post-meta">May 2026 <svg class="inline-icon"><use href="#i-pen"/></svg> Personal</div>
       <h2 class="post-title"><a href="blog/i-dont-know.html">I Don't Know Where I Am Right Now</a></h2>
       <p>Nothing has caught my attention well enough to hold it. I can name the things I love. I just can't reach them right now.</p>
       <a href="blog/i-dont-know.html" class="post-link">Read post &rarr;</a>
     </article>
 
-    <article class="post-card post-card-empty">
+    <article class="post-card post-card-empty fade-up delay-2">
       <div class="post-meta">soon</div>
       <h2 class="post-title">More coming soon</h2>
       <p>New posts on AI, engineering, and the things I'm figuring out along the way.</p>
@@ -75,6 +75,7 @@
 
 <footer>
   <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
@@ -86,6 +87,19 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const lyrics = [
+    'Is it still winter here?',
+    'I miss you.',
+    'How much longer do I have to wait?',
+    'Like a small piece, like the last of winter.',
+    'You know it all. You\'re my best friend.',
+    'Morning will come again.',
+    'Snowflakes are falling, getting farther away.',
+    'I wander around, looking for you.',
+    'Winter is cold because of you.'
+  ];
+  const el = document.getElementById('footerLyric');
+  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
 </script>
 
 </body>

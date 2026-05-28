@@ -56,17 +56,25 @@
 <section class="now-page-section">
   <div class="now-content">
 
-    <h2 class="now-h2">Looking for</h2>
-    <p>The right problem at the intersection of data and AI. Something that genuinely matters. Open to building with a team, joining something early-stage, or starting from scratch.</p>
+    <div class="fade-up delay-1">
+      <h2 class="now-h2">Looking for</h2>
+      <p>The right problem at the intersection of data and AI. Something that genuinely matters. Open to building with a team, joining something early-stage, or starting from scratch.</p>
+    </div>
 
-    <h2 class="now-h2">Building</h2>
-    <p>MomPop Care for my family. Production code, not a prototype. Agentic workflow experiments. This site.</p>
+    <div class="fade-up delay-2">
+      <h2 class="now-h2">Building</h2>
+      <p>MomPop Care for my family. Production code, not a prototype. Agentic workflow experiments. This site.</p>
+    </div>
 
-    <h2 class="now-h2">Learning</h2>
-    <p>Going deeper into agentic systems, AI integration, full-stack product work. Things I wouldn't pick up from inside a company.</p>
+    <div class="fade-up delay-3">
+      <h2 class="now-h2">Learning</h2>
+      <p>Going deeper into agentic systems, AI integration, full-stack product work. Things I wouldn't pick up from inside a company.</p>
+    </div>
 
-    <h2 class="now-h2">Otherwise</h2>
-    <p>Reading more, scrolling less. Trying to make rest a practice, not a guilty pause.</p>
+    <div class="fade-up delay-4">
+      <h2 class="now-h2">Otherwise</h2>
+      <p>Reading more, scrolling less. Trying to make rest a practice, not a guilty pause.</p>
+    </div>
 
     <p class="now-updated">last updated may 2026</p>
   </div>
@@ -74,6 +82,7 @@
 
 <footer>
   <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
@@ -85,6 +94,19 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const lyrics = [
+    'Is it still winter here?',
+    'I miss you.',
+    'How much longer do I have to wait?',
+    'Like a small piece, like the last of winter.',
+    'You know it all. You\'re my best friend.',
+    'Morning will come again.',
+    'Snowflakes are falling, getting farther away.',
+    'I wander around, looking for you.',
+    'Winter is cold because of you.'
+  ];
+  const el = document.getElementById('footerLyric');
+  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
 </script>
 
 </body>

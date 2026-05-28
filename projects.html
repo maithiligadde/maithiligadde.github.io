@@ -56,7 +56,7 @@
 <section class="projects-section">
   <div class="project-list">
 
-    <article class="project-card">
+    <article class="project-card hover-tilt fade-up delay-1">
       <div class="project-num">01</div>
       <div class="project-body">
         <h2 class="project-title">MomPop Care</h2>
@@ -70,7 +70,7 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card hover-tilt fade-up delay-2">
       <div class="project-num">02</div>
       <div class="project-body">
         <h2 class="project-title">maithiligadde.com</h2>
@@ -83,7 +83,7 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card hover-tilt fade-up delay-3">
       <div class="project-num">03</div>
       <div class="project-body">
         <h2 class="project-title">Agentic Workflow Experiments</h2>
@@ -96,7 +96,7 @@
       </div>
     </article>
 
-    <article class="project-card project-card-open">
+    <article class="project-card project-card-open hover-tilt fade-up delay-4">
       <div class="project-num">04</div>
       <div class="project-body">
         <h2 class="project-title">What's next</h2>
@@ -113,6 +113,7 @@
 
 <footer>
   <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/maithiligadde" target="_blank" rel="noopener">GitHub</a>
@@ -124,6 +125,19 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const lyrics = [
+    'Is it still winter here?',
+    'I miss you.',
+    'How much longer do I have to wait?',
+    'Like a small piece, like the last of winter.',
+    'You know it all. You\'re my best friend.',
+    'Morning will come again.',
+    'Snowflakes are falling, getting farther away.',
+    'I wander around, looking for you.',
+    'Winter is cold because of you.'
+  ];
+  const el = document.getElementById('footerLyric');
+  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
 </script>
 
 </body>
