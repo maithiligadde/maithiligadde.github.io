@@ -3,71 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maithili Gadde — Engineer, Builder, Explorer</title>
-<meta name="description" content="Maithili Gadde is a senior software engineer with a decade of experience building data platforms at scale. Currently exploring AI, agentic systems, and shipping things independently.">
-<meta property="og:title" content="Maithili Gadde — Engineer, Builder, Explorer">
-<meta property="og:description" content="A decade building data platforms at scale. Currently exploring AI, agentic systems, and what's next.">
+<title>Maithili Gadde</title>
+<meta name="description" content="Data engineer, mostly. Into AI, building things for fun, and figuring out what's next.">
+<meta property="og:title" content="Maithili Gadde">
+<meta property="og:description" content="Data engineer, mostly. Into AI, building things for fun, and figuring out what's next.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="hero-portrait.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maithili Gadde — Engineer, Builder, Explorer">
-<meta name="twitter:description" content="A decade building data platforms at scale. Currently exploring AI, agentic systems, and what's next.">
+<meta name="twitter:title" content="Maithili Gadde">
+<meta name="twitter:description" content="Data engineer, mostly. Into AI, building things for fun, and figuring out what's next.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- icon sprite: NYC + Hyderabad + tech -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <!-- chai: cutting chai tumbler -->
-  <symbol id="i-chai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M7 8 L8 20 L16 20 L17 8"/>
-    <line x1="6" y1="8" x2="18" y2="8"/>
-    <path d="M17 11 L20 11 L20 15 L17 15"/>
-    <path d="M10 5 Q10.5 3, 11.5 4"/>
-    <path d="M13 5 Q13.5 3, 14.5 4"/>
-  </symbol>
-  <!-- auto-rickshaw -->
-  <symbol id="i-rick" viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 14 L4 8 L8 4 L12 4 L12 8 L22 8 L24 14"/>
-    <line x1="4" y1="14" x2="24" y2="14"/>
-    <circle cx="8" cy="15" r="2"/>
-    <circle cx="21" cy="15" r="2"/>
-    <line x1="12" y1="4" x2="12" y2="14"/>
-    <path d="M14 8 L14 11 L19 11 L19 8"/>
-  </symbol>
-  <!-- biryani handi: round pot with steam -->
-  <symbol id="i-biryani" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 11 Q5 18, 12 19 Q19 18, 19 11"/>
-    <line x1="5" y1="11" x2="19" y2="11"/>
-    <path d="M8 11 L7 9 L17 9 L16 11"/>
-    <path d="M10 6 Q10 4, 11 5"/>
-    <path d="M14 6 Q14 4, 15 5"/>
-    <path d="M12 5 Q12 3, 13 4"/>
-  </symbol>
-  <!-- metro token: circle with M -->
-  <symbol id="i-metro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="9"/>
-    <path d="M7 16 L7 8 L12 13 L17 8 L17 16"/>
-  </symbol>
-  <!-- coffee: NYC paper cup -->
-  <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M7 9 L17 9 L16 21 L8 21 Z"/>
-    <line x1="6" y1="9" x2="18" y2="9"/>
-    <path d="M10 5 Q10 3, 11 3 Q11 5, 12 5 Q12 3, 13 3"/>
-  </symbol>
-  <!-- spark: four-point star -->
-  <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-    <path d="M12 2 L13.5 9.5 L21 12 L13.5 14.5 L12 22 L10.5 14.5 L3 12 L10.5 9.5 Z"/>
-  </symbol>
-  <!-- code: angle brackets -->
-  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="8 6 2 12 8 18"/>
-    <polyline points="16 6 22 12 16 18"/>
-    <line x1="14" y1="4" x2="10" y2="20"/>
-  </symbol>
-</defs></svg>
+<!-- shared icon sprite -->
+<script>fetch('icons.svg').then(r=>r.text()).then(t=>{const d=document.createElement('div');d.hidden=true;d.innerHTML=t;document.body.prepend(d.firstElementChild)})</script>
 
 <nav>
   <a href="index.html" class="nav-logo">MAITHILI GADDE</a>
@@ -86,16 +38,16 @@
 
 <div class="marquee">
   <div class="marquee-track">
-    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> a decade building systems <svg class="nyc-icon"><use href="#i-metro"/></svg> shipping things independently <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
-    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> a decade building systems <svg class="nyc-icon"><use href="#i-metro"/></svg> shipping things independently <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
+    <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
   </div>
 </div>
 
 <section class="hero">
   <div class="hero-left">
-    <h1 class="fade-up delay-1">I build data platforms<svg class="nyc-icon-sm star-after" style="margin-left:0.3em"><use href="#i-spark"/></svg><br>and pay attention to <span class="rose-line">everything else</span>.</h1>
-    <p class="hero-sub fade-up delay-2">Senior engineer with a decade of building data platforms at scale. Now exploring AI, agentic systems, and what's next while shipping real things along the way.</p>
-    <a href="work.html" class="btn fade-up delay-3">See the work</a>
+    <h1 class="fade-up delay-1">Data engineer by day<svg class="nyc-icon-sm star-after" style="margin-left:0.3em"><use href="#i-spark"/></svg><br>curious about <span class="rose-line">everything else</span>.</h1>
+    <p class="hero-sub fade-up delay-2">I've spent the last ten years working with data. Right now I'm independent, poking at AI, and building things I actually want to exist.</p>
+    <a href="work.html" class="btn fade-up delay-3">See what I've done</a>
   </div>
   <div class="hero-right">
     <div class="portrait-frame">
@@ -111,18 +63,18 @@
 <section class="three-panels">
   <div class="panel fade-up delay-1">
     <h2 class="panel-title">Hi! Glad<br>you're here!</h2>
-    <p>I'm Maithili. A decade of building data platforms at scale, now exploring AI and agentic systems.</p>
-    <p>This is where the work, the writing, and the rest of it lives.</p>
+    <p>I'm Maithili. I've been doing data engineering for about ten years and I'm currently figuring out what I want to do next.</p>
+    <p>This site is just me putting things in one place.</p>
   </div>
   <div class="panel fade-up delay-2">
-    <h2 class="panel-title">I'm a builder.</h2>
-    <p>Python, TypeScript, Spark, AWS. A decade moving data <svg class="panel-icon"><use href="#i-code"/></svg> Nielsen, Warner Music, Infosys. NYU for the master's.</p>
-    <p>Currently independent, shipping real things.</p>
+    <h2 class="panel-title">The short version.</h2>
+    <p>Python, TypeScript, Spark, AWS <svg class="panel-icon"><use href="#i-code"/></svg> Worked at Nielsen, Warner Music, Infosys. Did my master's at NYU.</p>
+    <p>Now I'm on my own, building stuff.</p>
   </div>
   <div class="panel fade-up delay-3">
-    <h2 class="panel-title">Find what<br>I'm building</h2>
-    <p>MomPop Care for my family. Agentic workflow experiments. This site, hand-coded.</p>
-    <p>Stay a while <svg class="panel-icon"><use href="#i-chai"/></svg> pick a room.</p>
+    <h2 class="panel-title">What I'm<br>up to lately</h2>
+    <p>Made an app for my parents. Playing with AI agents. Built this site by hand because why not.</p>
+    <p>Have a look around <svg class="panel-icon"><use href="#i-chai"/></svg></p>
   </div>
 </section>
 
@@ -142,27 +94,27 @@
     <a href="work.html" class="room-card hover-tilt fade-up delay-1">
       <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-metro"/></svg> Professional</div>
       <h3>Work</h3>
-      <p>A decade across Nielsen, Warner Music, Infosys. The systems I've built and what they did.</p>
+      <p>Ten years of jobs, teams, and things I helped build. The resume stuff.</p>
     </a>
     <a href="projects.html" class="room-card hover-tilt fade-up delay-2">
       <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-code"/></svg> Made by me</div>
       <h3>Projects</h3>
-      <p>What I've shipped since going independent. MomPop Care, agentic experiments, this site.</p>
+      <p>Things I've made on my own. Some useful, some just for fun.</p>
     </a>
     <a href="writing.html" class="room-card hover-tilt fade-up delay-3">
       <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-coffee"/></svg> Read me</div>
       <h3>Writing</h3>
-      <p>Notes on what I'm learning, building, and thinking about.</p>
+      <p>Occasional thoughts. No schedule, no theme, just whatever's on my mind.</p>
     </a>
     <a href="now.html" class="room-card hover-tilt fade-up delay-4">
       <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-chai"/></svg> This season</div>
       <h3>Now</h3>
-      <p>What I'm focused on right now. Updated when life shifts.</p>
+      <p>Where my head's at these days.</p>
     </a>
     <a href="into.html" class="room-card hover-tilt fade-up delay-5" style="grid-column: 1 / -1;">
       <div class="room-label"><svg class="nyc-icon-sm" style="color:var(--sage-deep)"><use href="#i-biryani"/></svg> The fun corner</div>
       <h3>Into</h3>
-      <p>Fashion, design, and the things I notice. A corner for what isn't on the resume.</p>
+      <p>Music, fashion, shows, and whatever else I'm into right now.</p>
     </a>
   </div>
 </section>
@@ -171,7 +123,7 @@
   <div class="section-eyebrow">a peek</div>
   <h2 class="section-title">WHAT I'M DOING NOW</h2>
   <div class="now-card">
-    <p>Building things for my family. Looking for the right problem. Figuring it out in public.</p>
+    <p>Making an app for my parents, learning new things, trying to figure out what comes next.</p>
     <a href="now.html" class="post-link" style="font-size:0.85rem;">See the full picture &rarr;</a>
   </div>
 </section>
@@ -180,7 +132,7 @@
   <div class="section-eyebrow">say hello</div>
   <h2 class="section-title">LET'S CONNECT</h2>
   <div class="contact-inner">
-    <p>Have something interesting to discuss? I'm always up for a good conversation, especially if it's about data, AI, or building things that matter.</p>
+    <p>Want to talk? I'm around. It doesn't have to be about work.</p>
     <a href="mailto:maithili.gadde@gmail.com" class="contact-email">maithili.gadde@gmail.com</a>
   </div>
 </section>
