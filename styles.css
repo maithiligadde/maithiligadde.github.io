@@ -137,7 +137,7 @@ nav {
 .hero {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  min-height: 600px;
+  min-height: 480px;
   border-bottom: 1px solid var(--ink);
 }
 .hero-left {
@@ -283,7 +283,7 @@ nav {
 
 /* ── rooms ── */
 .rooms-section {
-  padding: 5rem 3rem;
+  padding: 3.5rem 3rem;
   background: var(--cream);
   border-bottom: 1px solid var(--ink);
 }
@@ -302,7 +302,7 @@ nav {
   text-align: center;
   color: var(--rose-deep);
   letter-spacing: 0.02em;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .rooms-grid {
   display: grid;
@@ -397,7 +397,7 @@ nav {
 /* ── contact section ── */
 .contact-section {
   background: var(--rose-soft);
-  padding: 5rem 3rem;
+  padding: 3.5rem 3rem;
   border-bottom: 1px solid var(--ink);
   text-align: center;
 }
