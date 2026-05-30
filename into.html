@@ -8,15 +8,13 @@
 <meta property="og:title" content="Maithili Gadde — Into">
 <meta property="og:description" content="Music, fashion, shows, and whatever else I'm into right now.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://maithiligadde.com/into.html">
+<meta property="og:image" content="https://maithiligadde.com/hero-portrait.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
   /* staggered card entrance */
-  @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
   .lately-card {
     opacity: 0;
     animation: fadeSlideUp 0.5s ease forwards;
@@ -28,7 +26,7 @@
   .lately-card:nth-child(5) { animation-delay: 0.58s; }
   .lately-card:nth-child(6) { animation-delay: 0.7s; }
 
-  /* music bars animation for listening cards */
+  /* music bars */
   .music-bars {
     display: inline-flex;
     align-items: flex-end;
@@ -106,15 +104,6 @@
     transform: scale(1) rotate(20deg);
   }
 
-  /* gentle tilt on card hover */
-  .lately-card {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
-  }
-  .lately-card:hover {
-    transform: translate(-3px, -5px) rotate(-0.5deg);
-    box-shadow: 6px 8px 0 var(--ink);
-  }
-
   /* floating heading dot */
   .into-heading .dot {
     display: inline-block;
@@ -125,16 +114,11 @@
     margin-left: 6px;
     animation: floatDot 2s ease-in-out infinite;
   }
-  @keyframes floatDot {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
 </style>
 </head>
 <body>
 
-<!-- shared icon sprite -->
-<script>fetch('icons.svg').then(r=>r.text()).then(t=>{const d=document.createElement('div');d.hidden=true;d.innerHTML=t;document.body.prepend(d.firstElementChild)})</script>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="index.html" class="nav-logo">MAITHILI GADDE</a>
@@ -146,18 +130,19 @@
     <li><a href="now.html">Now</a></li>
     <li><a href="into.html" class="active">Into</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
     <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
   </div>
 </div>
 
+<main id="main">
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="page-eyebrow">— the fun corner</div>
@@ -238,7 +223,7 @@
         <div class="lately-item">French bob</div>
       </div>
 
-      <div class="lately-card sparkle-wrap">
+      <div class="lately-card sparkle-wrap" style="grid-column: 1 / -1;">
         <svg class="sparkle" viewBox="0 0 24 24" fill="var(--rose-deep)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L13.5 9.5 L21 12 L13.5 14.5 L12 22 L10.5 14.5 L3 12 L10.5 9.5 Z"/></svg>
         <div class="lately-label">Always into</div>
         <div class="lately-item">Fashion</div>
@@ -252,8 +237,10 @@
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-location">Hyderabad &middot; 2026</div>
   <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
@@ -262,25 +249,8 @@
   </div>
 </footer>
 
+<script src="main.js"></script>
 <script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  const lyrics = [
-    'Is it still winter here?',
-    'I miss you.',
-    'How much longer do I have to wait?',
-    'Like a small piece, like the last of winter.',
-    'You know it all. You\'re my best friend.',
-    'Morning will come again.',
-    'Snowflakes are falling, getting farther away.',
-    'I wander around, looking for you.',
-    'Winter is cold because of you.'
-  ];
-  const el = document.getElementById('footerLyric');
-  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
-
-  // cat peeks up after a moment
   setTimeout(() => {
     const cat = document.getElementById('peekCat');
     if (cat) cat.classList.add('peeked');

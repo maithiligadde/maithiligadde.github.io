@@ -8,7 +8,8 @@
 <meta property="og:title" content="Maithili Gadde">
 <meta property="og:description" content="Data engineer, mostly. Into AI, building things for fun, and figuring out what's next.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="hero-portrait.jpg">
+<meta property="og:url" content="https://maithiligadde.com/">
+<meta property="og:image" content="https://maithiligadde.com/hero-portrait.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maithili Gadde">
 <meta name="twitter:description" content="Data engineer, mostly. Into AI, building things for fun, and figuring out what's next.">
@@ -18,8 +19,7 @@
 </head>
 <body>
 
-<!-- shared icon sprite -->
-<script>fetch('icons.svg').then(r=>r.text()).then(t=>{const d=document.createElement('div');d.hidden=true;d.innerHTML=t;document.body.prepend(d.firstElementChild)})</script>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="index.html" class="nav-logo">MAITHILI GADDE</a>
@@ -31,18 +31,19 @@
     <li><a href="now.html">Now</a></li>
     <li><a href="into.html">Into</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
     <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
   </div>
 </div>
 
+<main id="main">
 <section class="hero">
   <div class="hero-left">
     <h1 class="fade-up delay-1">Data engineer by day<svg class="nyc-icon-sm star-after" style="margin-left:0.3em"><use href="#i-spark"/></svg><br>curious about <span class="rose-line">everything else</span>.</h1>
@@ -55,7 +56,7 @@
       <svg class="corner-mark tr" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
       <svg class="corner-mark bl" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
       <svg class="corner-mark br" viewBox="0 0 18 18" fill="currentColor"><path d="M9 0 L10 8 L18 9 L10 10 L9 18 L8 10 L0 9 L8 8 Z"/></svg>
-      <img src="hero-portrait.jpg" alt="Maithili Gadde">
+      <img src="hero-portrait.jpg" alt="Maithili Gadde" width="300" height="375" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -98,9 +99,10 @@
     <a href="mailto:maithili.gadde@gmail.com" class="contact-email">maithili.gadde@gmail.com</a>
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-location">Hyderabad &middot; 2026</div>
   <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
@@ -109,24 +111,7 @@
   </div>
 </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  const lyrics = [
-    'Is it still winter here?',
-    'I miss you.',
-    'How much longer do I have to wait?',
-    'Like a small piece, like the last of winter.',
-    'You know it all. You\'re my best friend.',
-    'Morning will come again.',
-    'Snowflakes are falling, getting farther away.',
-    'I wander around, looking for you.',
-    'Winter is cold because of you.'
-  ];
-  const el = document.getElementById('footerLyric');
-  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>

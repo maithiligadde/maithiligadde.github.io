@@ -8,14 +8,15 @@
 <meta property="og:title" content="Maithili Gadde — Work">
 <meta property="og:description" content="Where I've worked and what I did there. Nielsen, Warner Music, Infosys, NYU.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://maithiligadde.com/work.html">
+<meta property="og:image" content="https://maithiligadde.com/hero-portrait.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- shared icon sprite -->
-<script>fetch('icons.svg').then(r=>r.text()).then(t=>{const d=document.createElement('div');d.hidden=true;d.innerHTML=t;document.body.prepend(d.firstElementChild)})</script>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="index.html" class="nav-logo">MAITHILI GADDE</a>
@@ -27,18 +28,19 @@
     <li><a href="now.html">Now</a></li>
     <li><a href="into.html">Into</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
     <span>data engineer <svg class="nyc-icon"><use href="#i-coffee"/></svg> been at this for a while <svg class="nyc-icon"><use href="#i-metro"/></svg> doing my own thing now <svg class="nyc-icon"><use href="#i-chai"/></svg> based in hyderabad <svg class="nyc-icon"><use href="#i-rick"/></svg></span>
   </div>
 </div>
 
+<main id="main">
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="page-eyebrow">— professional</div>
@@ -134,8 +136,10 @@
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="tag">Hyderabad &middot; 2026</div>
+  <div class="footer-location">Hyderabad &middot; 2026</div>
   <div class="footer-lyric" id="footerLyric"></div>
   <div class="links">
     <a href="https://www.linkedin.com/in/maithiligadde/" target="_blank" rel="noopener">LinkedIn</a>
@@ -144,24 +148,7 @@
   </div>
 </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  const lyrics = [
-    'Is it still winter here?',
-    'I miss you.',
-    'How much longer do I have to wait?',
-    'Like a small piece, like the last of winter.',
-    'You know it all. You\'re my best friend.',
-    'Morning will come again.',
-    'Snowflakes are falling, getting farther away.',
-    'I wander around, looking for you.',
-    'Winter is cold because of you.'
-  ];
-  const el = document.getElementById('footerLyric');
-  if (el) el.textContent = lyrics[Math.floor(Math.random() * lyrics.length)];
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>
